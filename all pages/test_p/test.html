@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take the MIS Career Hub assessment and discover career paths that match your interests and preferences.">
+  <title>Career Assessment | MIS Career Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="assessment">
+  <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="MIS Career Hub home">
+      <span class="brand-mark">MIS</span><span class="brand-name">Career Hub</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="../../index.html">Home</a>
+      <a href="../specializes_p/specializes.html">Specializations</a>
+      <a class="active" href="test.html">Career Test</a>
+      <a href="../../index.html#about">About</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro" id="introScreen">
+      <div class="intro-copy">
+        <p class="eyebrow">A SMARTER WAY TO EXPLORE YOUR FUTURE</p>
+        <h1>Find the career path<br><span>that fits you.</span></h1>
+        <p class="intro-description">Answer 30 questions about your interests, preferred tasks, strengths, and work style. Your results will highlight three career paths to explore further.</p>
+        <div class="intro-facts">
+          <div><strong>30</strong><span>Questions</span></div>
+          <div><strong>~8–12</strong><span>Minutes</span></div>
+          <div><strong>43</strong><span>Career paths</span></div>
+        </div>
+        <button class="primary-button" id="startButton">Start Assessment <span>→</span></button>
+        <p class="privacy-note">No account required. Your answers stay in this page and are not sent to a server.</p>
+      </div>
+      <div class="intro-visual" aria-hidden="true">
+        <div class="visual-ring ring-a"></div><div class="visual-ring ring-b"></div>
+        <div class="visual-center"><span>YOU</span><b>→</b><span>CAREER</span></div>
+        <div class="visual-chip chip-a">INTERESTS</div><div class="visual-chip chip-b">SKILLS</div><div class="visual-chip chip-c">GOALS</div>
+      </div>
+    </section>
+
+    <section class="quiz-screen" id="quizScreen" hidden>
+      <div class="quiz-topline">
+        <div><p class="eyebrow">CAREER ASSESSMENT</p><h2>Discover your direction</h2></div>
+        <button class="text-button" id="quitButton">Exit test</button>
+      </div>
+      <div class="progress-area">
+        <div class="progress-label"><span id="questionCounter">Question 1 of 30</span><span id="progressPercent">3%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="question-card">
+        <div class="question-meta"><span id="questionCategory">YOUR INTERESTS</span><span id="questionNumber">01 / 30</span></div>
+        <h1 id="questionText">Question text goes here</h1>
+        <p class="question-hint">Choose the answer that feels closest to you. There are no right or wrong answers.</p>
+        <p class="keyboard-hint"><span>A</span><span>B</span><span>C</span><span>D</span> Select an answer · <kbd>Enter</kbd> Next question</p>
+        <div class="answers-list" id="answersList"></div>
+      </div>
+      <div class="quiz-navigation">
+        <button class="secondary-button" id="backButton" disabled>← Previous</button>
+        <span class="autosave-label">Your progress is kept while this page is open</span>
+        <button class="primary-button" id="nextButton" disabled>Next Question <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="results-screen" id="resultsScreen" hidden>
+      <div class="results-heading">
+        <p class="eyebrow">YOUR PERSONAL CAREER SNAPSHOT</p>
+        <h1>Your top career<br><span>matches.</span></h1>
+        <p>These recommendations are based on the preferences you selected. Use them as a starting point for research and practical exploration.</p>
+      </div>
+      <div class="results-layout">
+        <div class="matches-column">
+          <div class="results-section-title"><h2>Top 3 recommended paths</h2><span>Based on your answers</span></div>
+          <div id="topMatches" class="top-matches"></div>
+        </div>
+        <aside class="profile-card">
+          <p class="eyebrow">YOUR ANSWER PATTERN</p>
+          <h3>What your choices suggest</h3>
+          <p id="profileSummary" class="profile-summary"></p>
+          <div id="strengthTags" class="strength-tags"></div>
+          <div class="profile-disclaimer">This is a preference-based assessment, not a clinical or psychometric test. Your interests can change as you learn and gain experience.</div>
+        </aside>
+      </div>
+      <section class="salary-sources">
+        <h3>About the salary estimates</h3>
+        <p>Salary bands are broad, indicative monthly estimates in Egyptian pounds. They are not official guarantees and may differ by employer, city, industry, experience, English level, portfolio, and technical skills. The ranges are informed by publicly available Egypt salary benchmarks and job-market guides.</p>
+        <div class="source-links">
+          <a href="https://talenthub.glints.com/hiring-guide/egypt" target="_blank" rel="noopener noreferrer">Glints Egypt Hiring Guide</a>
+          <a href="https://www.paylab.com/eg/salaryinfo/information-technology?lang=en" target="_blank" rel="noopener noreferrer">Paylab Egypt Salary Survey</a>
+          <a href="https://maxishr.com/en/egypt/salary-benchmarking" target="_blank" rel="noopener noreferrer">MaxisHR Egypt Salary Guide</a>
+          <a href="https://egjobank.com/en/salaries/highest-paying-jobs" target="_blank" rel="noopener noreferrer">Egyptian Job Bank</a>
+        </div>
+      </section>
+      <div class="results-footer-actions">
+        <button class="secondary-button" id="retakeButton">↻ Retake assessment</button>
+        <button class="primary-button" id="printButton">Print / Save Results <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../../index.html"><span class="brand-mark">MIS</span><span class="brand-name">Career Hub</span></a>
+    <p>Explore your options. Build your skills. Shape your future.</p>
+    <span>© <span id="currentYear"></span> MIS Career Hub</span>
+  </footer>
+</body>
+</html>

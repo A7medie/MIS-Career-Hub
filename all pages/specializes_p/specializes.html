@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore career paths related to Management Information Systems, compare skills and tools, and discover your next step.">
+  <title>Explore Specializations | MIS Career Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="specializations">
+  <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="MIS Career Hub home">
+      <span class="brand-mark">MIS</span>
+      <span class="brand-name">Career Hub</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="../../index.html">Home</a>
+      <a class="active" href="specializes.html">Specializations</a>
+      <a href="../test_p/test.html">Career Test</a>
+      <a href="../../index.html#about">About</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR FUTURE STARTS WITH EXPLORATION</p>
+        <h1>Explore <span>Career Paths</span></h1>
+        <p class="hero-description">
+          Discover career opportunities connected to Management Information Systems.
+          Compare what each role involves, the skills you may need, and the tools used in the field.
+        </p>
+        <div class="hero-stats">
+          <div><strong id="totalCount">43</strong><span>Career paths</span></div>
+          <div><strong>6</strong><span>Career fields</span></div>
+          <div><strong>1</strong><span>Place to explore</span></div>
+        </div>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="orbit-core"><span> MIS </span></div>
+        <span class="orbit-tag tag-one">DATA</span>
+        <span class="orbit-tag tag-two">TECH</span>
+        <span class="orbit-tag tag-three">BUSINESS</span>
+      </div>
+    </section>
+
+    <section class="explore-section" id="explore">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR DIRECTION</p>
+          <h2>Explore Specializations</h2>
+          <p class="section-description">Search all career paths or filter them by field to find the roles that interest you.</p>
+        </div>
+        <span class="results-count" id="resultsCount" aria-live="polite">Showing 43 paths</span>
+      </div>
+
+      <div class="controls-panel">
+        <label class="search-box" for="searchInput">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="searchInput" placeholder="Search by job title, skill, or tool..." autocomplete="off">
+          <kbd>SEARCH</kbd>
+        </label>
+        <div class="filter-row" id="filterRow" aria-label="Filter by career field">
+          <button class="filter-btn active" data-category="All">All Fields</button>
+          <button class="filter-btn" data-category="Data & Analytics">Data & Analytics</button>
+          <button class="filter-btn" data-category="Software & Development">Software & Development</button>
+          <button class="filter-btn" data-category="IT & Infrastructure">IT & Infrastructure</button>
+          <button class="filter-btn" data-category="Business & Systems">Business & Systems</button>
+          <button class="filter-btn" data-category="Finance & Operations">Finance & Operations</button>
+          <button class="filter-btn" data-category="Digital & Other">Digital & Other</button>
+        </div>
+      </div>
+
+      <div class="specializations-grid" id="specializationsGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon">⌕</div>
+        <h3>No matching career paths</h3>
+        <p>Try another keyword or choose a different field.</p>
+        <button class="reset-btn" id="resetButton">Reset filters</button>
+      </div>
+    </section>
+
+    <section class="guidance-banner">
+      <div class="guidance-icon">✦</div>
+      <div>
+        <p class="eyebrow">NOT SURE WHERE TO START?</p>
+        <h2>Find a path that matches your interests.</h2>
+        <p>Take the career assessment to get suggested specializations based on your preferences.</p>
+      </div>
+      <a class="primary-button" href="../test_p/test.html">Take the Career Test <span>→</span></a>
+    </section>
+
+    <section class="note-section">
+      <span class="note-symbol">ⓘ</span>
+      <p><strong>A note about career readiness:</strong> MIS provides a useful combination of business and technology knowledge, but each career has its own requirements. Some roles may require additional technical study, certifications, practical projects, or experience. Use the details on this page as a starting point, not a guarantee of qualification.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="../../index.html"><span class="brand-mark">MIS</span><span class="brand-name">Career Hub</span></a>
+    <p>Explore your options. Build your skills. Shape your future.</p>
+    <span class="copyright">© <span id="currentYear"></span> MIS Career Hub. All rights reserved.</span>
+  </footer>
+
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
+    <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close details">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+</body>
+</html>
